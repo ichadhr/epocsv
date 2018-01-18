@@ -195,7 +195,7 @@ def modal_karton(FilePath, x, y) :
 
 def conf() :
     if os.path.exists('config.yaml') :
-        stream = file('config.yaml', 'r')
+        stream = open('config.yaml', 'r')
         config = yaml.load(stream)
         return config
 

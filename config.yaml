@@ -40,7 +40,7 @@ modal_karton:
   column: 3
 
 # Surya Toserba
-stsb: True
+stsb: False
 
 stsb_po_no:
   row: 10
@@ -55,5 +55,4 @@ stsb_page2:
   startRow: 63
   endRow: 95
   column: 0
-
 # end Surya Toserba
