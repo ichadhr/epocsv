@@ -45,3 +45,15 @@ stsb: True
 stsb_po_no:
   row: 10
   column: 0
+
+stsb_page1:
+  startRow: 17
+  endRow: 52
+  column: 0
+
+stsb_page2:
+  startRow: 63
+  endRow: 95
+  column: 0
+
+# end Surya Toserba

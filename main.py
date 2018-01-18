@@ -49,17 +49,45 @@ def stsb() :
     # if isNotBlank(config["stsb_po_no"]["column"]) :
     #     column = config["stsb_po_no"]["column"]
 
-    book = xlrd.open_workbook(File)
-    sheet = book.sheet_by_index(0)
-
-    data = sheet.cell_value(rowx=config["stsb_po_no"]["row"], colx=config["stsb_po_no"]["column"])
-
     DocN = DocNum(File, config["stsb_po_no"]["row"], config["stsb_po_no"]["column"])
     # DocN = str(DocN).split('.')[0]
     DocN = re.sub("[^0-9]", "", DocN)
 
-    print(DocN)
+    loopA = getRange(File, config["stsb_page1"]["startRow"], config["stsb_page1"]["endRow"], config["stsb_page1"]["column"])
 
+    loopB = getRange(File, config["stsb_page2"]["startRow"], config["stsb_page2"]["endRow"], config["stsb_page2"]["column"])
+
+    loopC = loopA.extend(loopB)
+
+    for resA in zip(loopA)  :
+        resA = formatSTSB(resA)
+
+        print(resA)
+
+def formatSTSB(soh) :
+    soh = str(soh)
+    soh = soh[:-3] #remove 3 char from last string
+    soh = soh[3:] # remove 3 char from first string
+    soh = re.split(r'\s{3,}', soh)
+    barcode = re.split(r'\s{2,}', soh[0])
+    tmp = re.split(r'\s{2,}', soh[2])
+    qty = tmp[1]
+    price = tmp[0].replace(".",'')
+
+    result = barcode[0]+';'+price+';'+qty
+
+    return result
+
+def getRange(FilePath, startX, endX, y) :
+    book = xlrd.open_workbook(FilePath)
+    sheet = book.sheet_by_index(0)
+
+    sX = startX - 1
+    eX = endX
+
+    data = sheet.col_values(y, start_rowx=sX, end_rowx=eX)
+
+    return data
 
 def normal() :
     # load config
