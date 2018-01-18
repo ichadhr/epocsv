@@ -1,0 +1,47 @@
+# main setting
+main:
+  code_store: "code_store"
+  po_no: "po_no"
+  barcode: "barcode"
+  qty: "qty"
+  modal_karton: "modal_karton"
+
+# Path File
+file: "PO6245-PO Surya Toserba.xls"
+
+# Dokumen nomor / PO nomor
+dokumen_no:
+  row: 0
+  column: 0
+
+# Code Store
+code_store:
+  row: 3
+  column: 0
+
+# PO Number
+po_no:
+  row: 3
+  column: 4
+
+# Barcode
+barcode:
+  row: 3
+  column: 1
+
+# Qty
+qty:
+  row: 3
+  column: 2
+
+# Modal Karton
+modal_karton:
+  row: 3
+  column: 3
+
+# Surya Toserba
+stsb: True
+
+stsb_po_no:
+  row: 10
+  column: 0
