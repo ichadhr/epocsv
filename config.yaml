@@ -40,7 +40,7 @@ modal_karton:
   column: 3
 
 # Surya Toserba
-stsb: False
+stsb: True
 
 stsb_po_no:
   row: 10

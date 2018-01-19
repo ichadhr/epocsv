@@ -61,8 +61,9 @@ def stsb() :
 
     for resA in zip(loopA)  :
         resA = formatSTSB(resA)
+        resB = DocN
 
-        print(resA)
+        print(resB+Delim+resA)
 
 def formatSTSB(soh) :
     soh = str(soh)
@@ -74,7 +75,7 @@ def formatSTSB(soh) :
     qty = tmp[1]
     price = tmp[0].replace(".",'')
 
-    result = barcode[0]+';'+price+';'+qty
+    result = barcode[0]+';'+qty+';'+price
 
     return result
 
